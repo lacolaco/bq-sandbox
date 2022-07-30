@@ -1,0 +1,12 @@
+{
+  "name": "bq-sandbox",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lacolaco/bq-sandbox.git",
+  "author": "Suguru Inatomi <suguru.inatomi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "exec": "node index.js"
+  }
+}
