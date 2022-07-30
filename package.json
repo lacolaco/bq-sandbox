@@ -13,5 +13,8 @@
   "devDependencies": {
     "@types/node": "^18.6.2",
     "esbuild": "^0.14.51"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^6.0.1"
   }
 }
