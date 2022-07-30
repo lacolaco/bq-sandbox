@@ -6,7 +6,11 @@ async function main() {
 
   const [dataset] = await bq.dataset(datasetId).get({ autoCreate: true });
   console.log(`Dataset ${dataset.id} created.`);
-  console.log(dataset);
+
+  const [table] = await dataset
+    .table('bq_sandbox_table_01')
+    .get({ autoCreate: true });
+  console.log(`Table ${table.id} created.`);
 }
 
 main().catch((error) => {
