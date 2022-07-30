@@ -6,12 +6,14 @@ on:
       - main
 
 jobs:
-  exec:
+  start:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
       - name: Execute
-        run: npm run exec
+        run: yarn start
