@@ -7,7 +7,7 @@
   "author": "Suguru Inatomi <suguru.inatomi@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild index.js --bundle --outfile=dist/bundle.js",
+    "build": "esbuild index.js --bundle --outfile=dist/bundle.js --platform=node --external:./node_modules/*",
     "start": "yarn build && node dist/bundle.js"
   },
   "devDependencies": {
