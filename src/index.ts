@@ -18,13 +18,15 @@ async function main() {
     .get({ autoCreate: true })) as TableResponse;
   console.log(`Table ${table.id} created.`);
 
-  await table.insert(
-    [
-      { name: 'John', age: 30 },
-      { name: 'Jane', age: 25 },
-    ],
-    { schema: 'name:string,age:integer' }
-  );
+  const [metadata] = await table.getMetadata();
+  await table.setMetadata({
+    ...metadata.schema,
+    schema: 'name:string,age:integer',
+  });
+  await table.insert([
+    { name: 'John', age: 30 },
+    { name: 'Jane', age: 25 },
+  ]);
   console.log(`Rows inserted.`);
 }
 
