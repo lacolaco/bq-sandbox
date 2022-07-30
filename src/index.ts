@@ -20,7 +20,7 @@ async function main() {
 
   const [metadata] = await table.getMetadata();
   await table.setMetadata({
-    ...metadata.schema,
+    ...metadata,
     schema: 'name:string,age:integer',
   });
   await table.insert([
