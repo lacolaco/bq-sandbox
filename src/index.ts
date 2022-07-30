@@ -1,10 +1,10 @@
 import { BigQuery } from '@google-cloud/bigquery';
 
 async function main() {
-  const datasetName = 'bq-sandbox';
+  const datasetId = 'bq_sandbox';
   const bq = new BigQuery();
 
-  const [dataset] = await bq.dataset(datasetName).get({ autoCreate: true });
+  const [dataset] = await bq.dataset(datasetId).get({ autoCreate: true });
   console.log(`Dataset ${dataset.id} created.`);
   console.log(dataset);
 }
